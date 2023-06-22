@@ -23,7 +23,8 @@ char *split_line(char *line, stack_t **stack, unsigned int line_number)
 			push_arg = atoi(arg);
 		else
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n",
+					line_number);
 			exit(EXIT_FAILURE);
 		}
 	}

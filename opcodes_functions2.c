@@ -34,3 +34,25 @@ void _nop(stack_t **stack __attribute__ ((unused)),
 {
 	;
 }
+/**
+ * _sub: subtracts the top element of the stack from the second top element
+ * of the stack.
+ * @stack: a list for the monty stack.
+ * @line_number: the line number on which the opcode appears.
+ *
+ * Return: void.
+ */
+void _sub(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr = *stack;
+	int sub;
+
+	if (ptr == NULL || ptr->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	sub = (*stack)->next->n - (*stack)->n;
+	_pop(stack, line_number);
+	(*stack)->n = sub;
+}
