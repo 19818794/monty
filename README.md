@@ -62,3 +62,16 @@ All of the following files are programs written in C:
 1
 1
 ```
+
+* **swap:**
+
+> root@????????????:~/monty# ./monty bytecodes/09.m 
+
+```
+3
+2
+1
+2
+3
+1
+```

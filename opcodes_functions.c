@@ -72,11 +72,34 @@ void _pop(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack", line_number);
+		fprintf(stderr, "L%d: can't pop an empty stack\n",
+				line_number);
 		exit(EXIT_FAILURE);
 	}
 	*stack = ptr->next;
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
 	free(ptr);
+}
+/**
+ * _swap - swaps the top two elements of the stack.
+ * @stack: a list for the monty stack.
+ * @line_number: the line number on which the opcode appears.
+ *
+ * Return: void.
+ */
+void _swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr = *stack;
+	int n_tmp;
+
+	if (ptr == NULL || ptr->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n",
+				line_number);
+		exit(EXIT_FAILURE);
+	}
+	n_tmp = ptr->n;
+	ptr->n = ptr->next->n;
+	ptr->next->n = n_tmp;
 }

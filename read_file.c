@@ -33,7 +33,8 @@ void read_file(char *filename, stack_t **stack)
 		function = get_function(line);
 		if (function == NULL)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, line);
+			fprintf(stderr, "L%d: unknown instruction %s\n",
+					line_number, line);
 			exit(EXIT_FAILURE);
 		}
 		function(stack, line_number);
