@@ -78,5 +78,6 @@ void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number __attribute__ ((unused)));
 int _isalpha(int ch);
 void _rotl(stack_t **stack, unsigned int line_number);
+void _rotr(stack_t **stack, unsigned int line_number __attribute__ ((unused)));
 
 #endif
