@@ -56,3 +56,39 @@ void _pchar(stack_t **stack, unsigned int line_number)
 	putchar(value);
 	putchar('\n');
 }
+/**
+ * _pstr - prints the string starting at the top of the stack,
+ * followed by a new line.
+ * @stack: a list for the monty stack.
+ * @line_number: the line number on which the opcode appears.
+ *
+ * Return: void.
+ */
+void _pstr(stack_t **stack, unsigned int line_number __attribute__ ((unused)))
+{
+	stack_t *ptr = *stack;
+	int ch;
+
+	while (ptr != NULL)
+	{
+		ch = ptr->n;
+		if (ch == 0 || _isalpha(ch) == 1)
+			break;
+		putchar(ch);
+		ptr = ptr->next;
+	}
+	putchar('\n');
+}
+/**
+ * _isalpha - checks if a number is a code ASCII of an alphabet.
+ * @ch: the number to be checked.
+ *
+ * Return: 0 if it is an alphabet,
+ * 1 otherwise.
+ */
+int _isalpha(int ch)
+{
+	if ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122) || ch == 0)
+		return (0);
+	return (1);
+}

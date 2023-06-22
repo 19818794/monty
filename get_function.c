@@ -23,6 +23,7 @@ void (*get_function(char *str))(stack_t **stack, unsigned int line_number)
 		{"mul", _mul},
 		{"mod", _mod},
 		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL},
 	};
 
