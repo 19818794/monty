@@ -25,12 +25,22 @@ All of the following files are programs written in C:
 | `read_file.c`          | read a file and execute commands.
 | `split_line.c`         | splits line to opcode and argument.
 | `get_function.c`       | gets a corresponding function based on the opcode given.
-| `opcodes_functions.c ` | implements the opcodes.
+| `opcodes_functions.c`  | implements the opcodes.
 | `free_list.c`          | frees a list.
+| `opcodes_functions2.c` | implements the opcodes.
 
 # Examples
 
 * **push, pall:**
+
+> root@????????????:~/monty# cat -e bytecodes/00.m
+
+```
+push 1$
+push 2$
+push 3$
+pall$
+```
 
 > root@????????????:~/monty# ./monty bytecodes/00.m 
 
@@ -42,6 +52,17 @@ All of the following files are programs written in C:
 
 * **pint:**
 
+> root@????????????:~/monty# cat bytecodes/06.m
+
+```
+push 1
+pint
+push 2
+pint
+push 3
+pint
+```
+ 
 > root@????????????:~/monty# ./monty bytecodes/06.m 
 
 ```
@@ -51,6 +72,21 @@ All of the following files are programs written in C:
 ```
 
 * **pop:**
+
+> root@????????????:~/monty# cat bytecodes/07.m 
+
+```
+push 1
+push 2
+push 3
+pall
+pop
+pall
+pop
+pall
+pop
+pall
+```
 
 > root@????????????:~/monty# ./monty bytecodes/07.m 
 
@@ -65,6 +101,17 @@ All of the following files are programs written in C:
 
 * **swap:**
 
+> root@????????????:~/monty# cat bytecodes/09.m 
+
+```
+push 1
+push 2
+push 3
+pall
+swap
+pall
+```
+
 > root@????????????:~/monty# ./monty bytecodes/09.m 
 
 ```
@@ -73,5 +120,29 @@ All of the following files are programs written in C:
 1
 2
 3
+1
+```
+
+* **add:**
+
+> root@????????????:~/monty# cat bytecodes/12.m 
+
+```
+push 1
+push 2
+push 3
+pall
+add
+pall
+
+```
+
+> root@????????????:~/monty# ./monty bytecodes/12.m 
+
+```
+3
+2
+1
+5
 1
 ```
