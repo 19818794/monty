@@ -28,6 +28,7 @@ All of the following files are programs written in C:
 | `opcodes_functions.c`  | implements the opcodes.
 | `free_list.c`          | frees a list.
 | `opcodes_functions2.c` | implements the opcodes.
+| `opcodes_functions3.c` | implements the opcodes.
 
 # Examples
 
@@ -228,5 +229,28 @@ pall
 2
 1
 6
+1
+```
+
+* **mod:**
+
+> root@????????????:~/monty# cat bytecodes/22.m 
+
+```
+push 1
+push 2
+push 3
+pall
+mod
+pall
+```
+
+> root@????????????:~/monty# ./monty bytecodes/22.m 
+
+```
+3
+2
+1
+2
 1
 ```
