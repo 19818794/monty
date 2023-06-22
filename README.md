@@ -254,3 +254,22 @@ pall
 2
 1
 ```
+
+* **#**
+
+> root@????????????:~/monty# cat bytecodes/23.m 
+
+```
+push 1 # push 2
+push 3 # push 4
+push 5 # push 6
+pall # pall
+```
+
+> root@????????????:~/monty# ./monty bytecodes/23.m 
+
+```
+5
+3
+1
+```
