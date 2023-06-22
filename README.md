@@ -29,3 +29,23 @@ All of the following files are programs written in C:
 | `free_list.c`          | frees a list.
 
 # Examples
+
+* **push, pall:**
+
+> root@????????????:~/monty# ./monty bytecodes/00.m 
+
+```
+3
+2
+1
+```
+
+* **pint:**
+
+> root@????????????:~/monty# ./monty bytecodes/06.m 
+
+```
+1
+2
+3
+```

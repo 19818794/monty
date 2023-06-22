@@ -41,3 +41,21 @@ void _pall(stack_t **stack, unsigned int line_number __attribute__ ((unused)))
 		ptr = ptr->next;
 	}
 }
+/**
+ * _pint - prints the value at the top of the stack, followed by a new line.
+ * @stack: a list for the monty stack.
+ * @line_number: the line number on which the opcode appears.
+ *
+ * Return: void.
+ */
+void _pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr = *stack;
+
+	if (ptr == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", ptr->n);
+}

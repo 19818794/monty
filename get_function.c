@@ -13,6 +13,7 @@ void (*get_function(char *str))(stack_t **stack, unsigned int line_number)
 	instruction_t instruction[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL},
 	};
 
