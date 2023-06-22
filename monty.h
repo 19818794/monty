@@ -68,5 +68,6 @@ int is_number(char *str);
 void _push(stack_t **stack, unsigned int line_number __attribute__ ((unused)));
 void _pall(stack_t **stack, unsigned int line_number __attribute__ ((unused)));
 void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
 
 #endif

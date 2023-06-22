@@ -49,3 +49,16 @@ All of the following files are programs written in C:
 2
 3
 ```
+
+* **pop:**
+
+> root@????????????:~/monty# ./monty bytecodes/07.m 
+
+```
+3
+2
+1
+2
+1
+1
+```

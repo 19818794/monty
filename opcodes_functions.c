@@ -59,3 +59,24 @@ void _pint(stack_t **stack, unsigned int line_number)
 	}
 	printf("%d\n", ptr->n);
 }
+/**
+ * _pop - removes the top element of the stack.
+ * @stack: a list for the monty stack.
+ * @line_number: the line number on which the opcode appears.
+ *
+ * Return: void.
+ */
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr = *stack;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack", line_number);
+		exit(EXIT_FAILURE);
+	}
+	*stack = ptr->next;
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+	free(ptr);
+}
