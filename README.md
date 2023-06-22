@@ -184,3 +184,26 @@ pall
 2
 1
 ```
+
+* **div:**
+
+> root@????????????:~/monty# more bytecodes/20.m 
+
+```
+push 2
+push 3
+push 4
+pall
+div
+pall
+```
+
+> root@????????????:~/monty# ./monty bytecodes/20.m 
+
+```
+4
+3
+2
+0
+2
+```
