@@ -35,7 +35,7 @@ void _nop(stack_t **stack __attribute__ ((unused)),
 	;
 }
 /**
- * _sub: subtracts the top element of the stack from the second top element
+ * _sub - subtracts the top element of the stack from the second top element
  * of the stack.
  * @stack: a list for the monty stack.
  * @line_number: the line number on which the opcode appears.
@@ -83,4 +83,26 @@ void _div(stack_t **stack, unsigned int line_number)
 	div = (*stack)->n;
 	_pop(stack, line_number);
 	(*stack)->n /= div;
+}
+/**
+ * _mul - multiplies the second top element of the stack with the top element
+ * of the stack.
+ * @stack: a list for the monty stack.
+ * @line_number: the line number on which the opcode appears.
+ *
+ * Return: void.
+ */
+void _mul(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr = *stack;
+	int mul;
+
+	if (ptr == NULL || ptr->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	mul = (*stack)->n;
+	_pop(stack, line_number);
+	(*stack)->n *= mul;
 }
