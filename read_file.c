@@ -24,7 +24,7 @@ void read_file(char *filename, stack_t **stack)
 	}
 	while ((length = getline(&buffer, &size, file)) != -1)
 	{
-		line = split_line(buffer, stack, line_number);
+		line = split_line(buffer, line_number);
 		if (line == NULL || line[0] == '#')
 		{
 			line_number++;

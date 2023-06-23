@@ -49,3 +49,28 @@ void _rotr(stack_t **stack, unsigned int line_number __attribute__ ((unused)))
 	(*stack)->prev = last_element;
 	*stack = last_element;
 }
+/**
+ * _stack -  sets the format of the data to a stack (LIFO). This is the default
+ * behavior of the program.
+ * @stack: a list for the monty stack.
+ * @line_number: the line number on which the opcode appears.
+ *
+ * Return: void.
+ */
+void _stack(stack_t **stack __attribute__ ((unused)),
+		unsigned int line_number __attribute__ ((unused)))
+{
+	;
+}
+/**
+ * _queue - sets the format of the data to a queue (FIFO).
+ * @stack: a list for the monty stack.
+ * @line_number: the line number on which the opcode appears.
+ *
+ * Return: void.
+ */
+void _queue(stack_t **stack __attribute__ ((unused)),
+		unsigned int line_number __attribute__ ((unused)))
+{
+	;
+}

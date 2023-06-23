@@ -17,6 +17,7 @@ extern char *filename;
 extern FILE *file;
 extern int push_arg;
 extern char *buffer;
+extern int flag_stack_queue;
 
 /* Structures */
 /**
@@ -58,7 +59,7 @@ void free_list(stack_t *head);
 void (*get_function(char *line))(stack_t **stack, unsigned int line_number);
 
 /* Split function */
-char *split_line(char *line, stack_t **stack, unsigned int line_number);
+char *split_line(char *line, unsigned int line_number);
 int is_number(char *str);
 
 /* opcodes functions */
@@ -79,5 +80,8 @@ void _pstr(stack_t **stack, unsigned int line_number __attribute__ ((unused)));
 int _isalpha(int ch);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number __attribute__ ((unused)));
-
+void _stack(stack_t **stack __attribute__ ((unused)),
+		unsigned int line_number __attribute__ ((unused)));
+void _queue(stack_t **stack __attribute__ ((unused)),
+		unsigned int line_number __attribute__ ((unused)));
 #endif

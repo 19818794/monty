@@ -261,9 +261,11 @@ pall
 > root@????????????:~/monty# cat bytecodes/23.m 
 
 ```
+# push everything
 push 1 # push 2
 push 3 # push 4
-push 5 # push 6
+push 5 This should not be taken into account
+     # pall
 pall # pall
 ```
 
@@ -405,4 +407,38 @@ pall
 4
 3
 2
+```
+
+* **stack, queue:**
+
+> root@????????????:~/monty# cat bytecodes/15.m 
+
+```
+push 98
+push 343
+pall
+queue
+pall
+push 12
+push 14
+pall
+stack
+pall
+```
+
+> root@????????????:~/monty# ./monty bytecodes/15.m 
+
+```
+343
+98
+343
+98
+14
+12
+343
+98
+98
+343
+12
+14
 ```

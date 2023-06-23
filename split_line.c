@@ -3,15 +3,14 @@
 /**
  * split_line - splits line to opcode and argument.
  * @line: the line to be splitted.
- * @stack: a list for the monty stack.
  * @line_number: the line number on which the opcode appears.
  *
  * Return: opcode ot NULL if it fails.
  */
-char *split_line(char *line, stack_t **stack, unsigned int line_number)
+char *split_line(char *line, unsigned int line_number)
 {
-	char *push = "push", *opcode, *arg;
-	(void)stack;
+	char *push = "push", *opcode, *arg,
+	     *sstack = "stack", *queue = "queue";
 
 	opcode = strtok(line, "\n ");
 	if (opcode == NULL)
@@ -28,6 +27,10 @@ char *split_line(char *line, stack_t **stack, unsigned int line_number)
 			exit(EXIT_FAILURE);
 		}
 	}
+	else if (strcmp(opcode, sstack) == 0)
+		flag_stack_queue = 1;
+	else if (strcmp(opcode, queue) == 0)
+		flag_stack_queue = 0;
 	return (opcode);
 }
 

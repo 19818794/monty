@@ -35,10 +35,23 @@ void _pall(stack_t **stack, unsigned int line_number __attribute__ ((unused)))
 {
 	stack_t *ptr = *stack;
 
-	while (ptr != NULL)
+	if (!flag_stack_queue)
 	{
-		printf("%d\n", ptr->n);
-		ptr = ptr->next;
+		while (ptr)
+		{
+			printf("%d\n", ptr->n);
+			ptr = ptr->next;
+		}
+	}
+	else
+	{
+		while (ptr->next)
+			ptr = ptr->next;
+		while (ptr)
+		{
+			printf("%d\n", ptr->n);
+			ptr = ptr->prev;
+		}
 	}
 }
 /**

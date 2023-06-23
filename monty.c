@@ -4,6 +4,7 @@ char *filename;
 FILE *file;
 int push_arg;
 char *buffer;
+int flag_stack_queue = 0;
 
 /**
  * main - Entry point.
