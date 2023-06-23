@@ -51,7 +51,7 @@ int is_number(char *str)
 			i++;
 			continue;
 		}
-		if (str[i] < 48 && str[i] > 57)
+		if (str[i] < 48 || str[i] > 57)
 			return (1);
 	}
 	return (0);
